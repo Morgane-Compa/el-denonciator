@@ -21,22 +21,29 @@ export class AbsentsComponent implements OnInit {
 
   } 
 
- // Méthode d'initialisation du composant Angular
+  //on appelle toutes les méthodes qu'on a créé dans notre servie pour les initialiser sur notre page
+
+
+ //on initialise le tout!
   ngOnInit(): void {
-    this.initForm() // Initialisation du formulaire pour ajouter un étudiant absent
-    this.absentStudent= this.studentService.getStudent()  // Récupération de la liste des étudiants absents
+
+    this.initForm() 
+    this.absentStudent= this.studentService.getStudent() 
   }
 
-// Methode qui permet l'ajout d'un étudiant absent dans la liste des absents
+
+
+  // on veut ajouter des collègues à la liste des absents
 addElement(){
-  this.studentService.addStudent(this.absentForm.value.student) // Ajout de l'étudiant absent avec le service
-  this.absentStudent= this.studentService.getStudent() // Mise à jour de la liste des étudiants absents
-  console.log(this.absentStudent); // Affichage dans la console de la liste des étudiants absents
 
-
+  this.studentService.addStudent(this.absentForm.value.student) 
+  this.absentStudent= this.studentService.getStudent() 
+  console.log(this.absentStudent); 
 }
 
-// Initialisation du formulaire pour ajouter un étudiant absent
+
+
+// on initialise notre formulaire d'absents
 initForm(){
   this.absentForm= this.formbuilder.group({
     student: null
@@ -44,7 +51,10 @@ initForm(){
 
 }
 
- // Suppression d'un étudiant absent de la liste des absents
+
+
+
+ // Si on veux supprimer un collègue de la liste des absents
 removeElement(idStudent: number): void{
   this.studentService.removeElement(idStudent);
   this.absentStudent= this.studentService.getStudent()

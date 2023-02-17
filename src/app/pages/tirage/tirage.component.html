@@ -1,6 +1,8 @@
 <main>
+    <!-- bouton pour enclencher la selection aléatoire -->
     <button (click)="sentenceIrrevocable()">🎰 Sélectionner une personne 🎰</button>
 
+    <!-- ici j'affiche le résultat de la selection -->
     <div>
         <p class= name *ngIf="result">{{result.name}} 🌸 <br> </p>
         <p>{{winner}}</p>
