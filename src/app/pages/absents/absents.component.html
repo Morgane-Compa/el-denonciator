@@ -1,0 +1,56 @@
+<main>
+ 
+    <form [formGroup]="absentForm">
+    
+
+        <h1>Ajouter un.e absent.e</h1>
+
+
+        <select formControlName="student">
+            
+            <option disabled selected [ngValue]="null">Selectionner absent</option>
+            <option *ngFor="let person of student" [ngValue]="person">
+                {{person.name}}
+            </option>
+
+        </select>
+
+        <br> <br> 
+
+        <button type="submit" (click)="addElement()">Ajouter</button>
+    
+    </form>
+
+    <div class="classroom">
+
+        <div class="absents">
+            <h2>Liste des absents</h2>
+
+            <ul>
+                <li *ngFor="let person of absentStudent; let index=index"
+                    [ngClass]="{'classement' : person.gender === 'female'}">
+                    {{person.name}}
+                    <span class="xbutton"  (click)="removeElement(index)"> X </span> <br> <br>
+
+                </li>
+            </ul>
+        </div>
+
+
+        <div class="absentes">
+            <h2>Liste des absentes</h2>
+
+            <ul>
+                <li *ngFor="let person of absentStudent; let index=index"
+                    [ngClass]="{'classement' : person.gender === 'male'}">
+                    {{person.name}}
+                    <span class="xbutton" (click)="removeElement(index)"> X </span> <br> <br>
+                </li>
+            </ul>
+        </div>
+
+    </div>
+
+</main>
+
+

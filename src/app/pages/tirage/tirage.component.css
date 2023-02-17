@@ -1,0 +1,33 @@
+main{
+    height: 82vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+
+
+button{
+    width: 453px;
+    height: 75px;
+    border-radius: 60px;
+    border: none;
+    background-color: #CE0033;
+    color: white;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+div{
+    width: 896px;
+    height: 354px;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.name{
+    font-weight: 700;
+}
