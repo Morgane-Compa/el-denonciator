@@ -1,0 +1,46 @@
+main{
+    height: 82vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+select{
+    background-color: white;
+    border-radius: 10px;
+    width: 507px;
+    height: 73px;
+    font-size: 16px;
+    padding: 0 20px;
+}
+
+
+button{
+    padding: 20px;
+    border-radius: 60px;
+    border: none;
+    background-color: #CE0033;
+    color: white;
+    font-weight: 700;
+    font-size: 20px;
+}
+
+
+.classement{
+    display: none;
+}
+
+.xbutton{
+    background-color: #D9D9D9;
+    color: black;
+    font-weight: normal;
+    border-radius: 70px;
+    padding: 0px 6px;
+}
+
+.classroom{
+    padding-left: 100px;
+    margin-left: 100px;
+    border-left: 1px solid black;
+}
+
