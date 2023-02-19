@@ -56,7 +56,9 @@ export class SelectionService {
   }
 
   
-  // on sauvegarde la liste
+
+
+  // on enlève un collègue et on sauvegarde la liste
   public removeElement(idStudent: number){
     const student= this.getStudent() 
     student.splice(idStudent, 1)

@@ -17,9 +17,7 @@ export class AbsentsComponent implements OnInit {
   absentForm! : FormGroup; 
   absentStudent!: Student[]; 
 
-  constructor(private formbuilder: FormBuilder, private studentService: SelectionService) {
-
-  } 
+  constructor(private formbuilder: FormBuilder, private studentService: SelectionService) {} 
 
   //on appelle toutes les méthodes qu'on a créé dans notre servie pour les initialiser sur notre page
 
@@ -33,6 +31,7 @@ export class AbsentsComponent implements OnInit {
 
 
 
+
   // on veut ajouter des collègues à la liste des absents
 addElement(){
 
@@ -40,6 +39,7 @@ addElement(){
   this.absentStudent= this.studentService.getStudent() 
   console.log(this.absentStudent); 
 }
+
 
 
 
@@ -53,12 +53,10 @@ initForm(){
 
 
 
-
  // Si on veux supprimer un collègue de la liste des absents
 removeElement(idStudent: number): void{
   this.studentService.removeElement(idStudent);
   this.absentStudent= this.studentService.getStudent()
 }
-
 
 }

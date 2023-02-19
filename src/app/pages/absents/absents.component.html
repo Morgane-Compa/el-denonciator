@@ -1,5 +1,6 @@
 <main>
  
+    <!-- première section : le menu déroulant -->
     <form [formGroup]="absentForm">
     
 
@@ -21,7 +22,9 @@
     </form>
 
 
-    <!-- les résultats -->
+
+
+    <!-- deuxième section: les résultats -->
     <div class="classroom">
 
         <!-- absents filles -->
@@ -33,10 +36,12 @@
                 <li *ngFor="let person of absentStudent; let index=index"
                     [ngClass]="{'classement' : person.gender === 'female'}">
                     {{person.name}}
-                    <span class="xbutton"  (click)="removeElement(index)"> X </span> <br> <br>
+                    <button class="xbutton"  (click)="removeElement(index)"> x </button> <br> <br>
                 </li>
             </ul>
         </div>
+
+
 
         <!-- absents garçons -->
         <div class="absentes">
@@ -46,7 +51,7 @@
                 <li *ngFor="let person of absentStudent; let index=index"
                     [ngClass]="{'classement' : person.gender === 'male'}">
                     {{person.name}}
-                    <span class="xbutton" (click)="removeElement(index)"> X </span> <br> <br>
+                    <button class="xbutton" (click)="removeElement(index)"> x </button> <br> <br>
                 </li>
             </ul>
         </div>
@@ -54,5 +59,4 @@
     </div>
 
 </main>
-
 

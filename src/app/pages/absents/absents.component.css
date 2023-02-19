@@ -32,6 +32,8 @@ button{
 
 .xbutton{
     background-color: #D9D9D9;
+    color: black;
+    font-weight: normal;
     border-radius: 70px;
     padding: 0px 6px;
 }
