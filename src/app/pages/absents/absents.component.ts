@@ -16,6 +16,7 @@ export class AbsentsComponent implements OnInit {
   student: Student[] = STUDENTS; 
   absentForm! : FormGroup; 
   absentStudent!: Student[]; 
+  result!: Student;
 
   constructor(private formbuilder: FormBuilder, private studentService: SelectionService) {} 
 
@@ -38,6 +39,7 @@ addElement(){
   this.studentService.addStudent(this.absentForm.value.student) 
   this.absentStudent= this.studentService.getStudent() 
   console.log(this.absentStudent); 
+  // this.student.isAbsent === true;
 }
 
 
@@ -51,12 +53,21 @@ initForm(){
 
 }
 
-
-
  // Si on veux supprimer un collègue de la liste des absents
 removeElement(idStudent: number): void{
   this.studentService.removeElement(idStudent);
   this.absentStudent= this.studentService.getStudent()
+}
+
+// J'ai tenté un truc... c'est pas bon mais au moins j'ai tenté
+isAbsent() {
+  this.addElement();
+  this.result.isAbsent === true;
+}
+
+isPresent() {
+  
+  this.result.isAbsent === false;
 }
 
 }
