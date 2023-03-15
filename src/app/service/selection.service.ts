@@ -51,6 +51,7 @@ export class SelectionService {
     }
     else {
       student.push(absentStudent) 
+      
     }
     this.saveStudent(student) 
   }

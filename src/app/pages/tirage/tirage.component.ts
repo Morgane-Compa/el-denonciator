@@ -16,8 +16,6 @@ export class TirageComponent {
   result!: Student;
   winner: string = "Personne n’a été sélectionné actuellement 👀";
 
- 
-
   // on créé une fonction pour lier notre mock a noter page et pour choisir un nom dans notre tableau d'élèves 
   // je vais également essayer d'enlever de la liste d'élève les absents au total d'élèves 
   fonction(gens: Student[]){
@@ -25,7 +23,6 @@ export class TirageComponent {
     const rand = Math.random();
     //pour linstant je ne sais pas comment faire pour les absents mais ça viendra
 
-    
     const totalEleves = gens.length;
     const randIndex = Math.floor(rand * totalEleves);
     const randomEleves = gens[randIndex];
@@ -34,20 +31,27 @@ export class TirageComponent {
     return randomEleves;
   }
 
-
   // on créer une fonction pour "activer la fonction précédente" et on y rajoute le le facteur de genre
   
   sentenceIrrevocable() {
     this.result! = this.fonction(this.gens); 
 
-     if(this.result.gender === 'female'){ 
-       this.winner = "Tu es la grande gagnante"
+    if (this.result.gender === 'female' && !this.result.isAbsent && !this.result.isSelected) { 
+
+      this.winner = "Tu es la grande gagnante";
+      // Je change la donnée isSelected de mon mock pour que l'élève ne soit pas selectionné de nouveau
+      this.result.isSelected = true;
+      
+     } else if (this.result.gender === 'male' && !this.result.isAbsent && !this.result.isSelected) {
+      
+      this.winner = "tu es le grand gagnant";
+      this.result.isSelected = true;
+      
      } else{ 
-       this.winner = "tu es le grand gagnant"
+      //  this.result === null,
+      // La ligne du dessus, c'est ce que j'avais mis au début (parce que je suis une patate) mais je préfère la laisser car je trouve important de mettre aussi mes erreurs (cela dit je suis pas sure quec ce que j'ai mis soit mieux²²). 
+       this.sentenceIrrevocable()
      }
   }
-
-
-  
 }
 
